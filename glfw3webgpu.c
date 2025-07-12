@@ -86,7 +86,7 @@ WGPUSurface glfwCreateWindowWGPUSurface(WGPUInstance instance, GLFWwindow* windo
 
         WGPUSurfaceDescriptor surfaceDescriptor;
         surfaceDescriptor.nextInChain = &fromXlibWindow.chain;
-        surfaceDescriptor.label = (WGPUStringView){ NULL, WGPU_STRLEN };
+        surfaceDescriptor.label = WGPU_STRING_VIEW_INIT;
 
         return wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
     }
@@ -105,7 +105,7 @@ WGPUSurface glfwCreateWindowWGPUSurface(WGPUInstance instance, GLFWwindow* windo
 
         WGPUSurfaceDescriptor surfaceDescriptor;
         surfaceDescriptor.nextInChain = &fromWaylandSurface.chain;
-        surfaceDescriptor.label = (WGPUStringView){ NULL, WGPU_STRLEN };
+        surfaceDescriptor.label = WGPU_STRING_VIEW_INIT;
 
         return wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
     }
@@ -125,7 +125,7 @@ WGPUSurface glfwCreateWindowWGPUSurface(WGPUInstance instance, GLFWwindow* windo
 
         WGPUSurfaceDescriptor surfaceDescriptor;
         surfaceDescriptor.nextInChain = &fromMetalLayer.chain;
-        surfaceDescriptor.label = (WGPUStringView){ NULL, WGPU_STRLEN };
+        surfaceDescriptor.label = WGPU_STRING_VIEW_INIT;
 
         return wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
     }
@@ -144,7 +144,7 @@ WGPUSurface glfwCreateWindowWGPUSurface(WGPUInstance instance, GLFWwindow* windo
 
         WGPUSurfaceDescriptor surfaceDescriptor;
         surfaceDescriptor.nextInChain = &fromWindowsHWND.chain;
-        surfaceDescriptor.label = (WGPUStringView){ NULL, WGPU_STRLEN };
+        surfaceDescriptor.label = WGPU_STRING_VIEW_INIT;
 
         return wgpuInstanceCreateSurface(instance, &surfaceDescriptor);
     }
